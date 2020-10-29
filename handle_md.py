@@ -11,7 +11,7 @@ import sys
 
 def file_handler(file_name, year=None, month=None, folder_name='default'):
     path = '/images/' + year + '/' + month + '/' + folder_name + '/'
-    rule = re.compile(r'<img src=".*\\(.*\.jpg)" alt="(.*)" style=".*;" />')
+    rule = re.compile(r'<img src=".*\\(.*\..{3,4})" alt="(.*)" style=".*;" />')
     with open(file_name, 'r', encoding="utf-8") as raw:
         with open('output.md', 'w', encoding="utf-8") as new:
             for line in raw.readlines():
